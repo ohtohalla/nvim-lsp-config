@@ -56,7 +56,7 @@ If you're configuring neovim for the first time, then do the following:
 
    ```bash 
    mkdir -p ~/.config/nvim
-   git clone https://github.com/nikvdp/nvim-lsp-config/ ~/.config/nvim
+   git clone https://github.com/ohtohalla/nvim-lsp-config/ ~/.config/nvim
    ```
 2. install vim-plug:
 
