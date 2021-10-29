@@ -29,6 +29,8 @@ call plug#begin(stdpath('data') . 'vimplug')
     
     Plug 'preservim/nerdtree'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 call plug#end()
 
 
