@@ -15,6 +15,8 @@ call plug#begin(stdpath('data') . 'vimplug')
 
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'nikvdp/neomux'
+    Plug 'arcticicestudio/nord-vim'
+    
 
     Plug 'tpope/vim-ragtag'
     Plug 'tpope/vim-surround'
@@ -24,11 +26,14 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'tpope/vim-fugitive'
 
     Plug 'tomtom/tcomment_vim'
+    
+    Plug 'preservim/nerdtree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 
 
-colorscheme PaperColor
+colorscheme nord
 
 " basic settings
 syntax on
@@ -51,8 +56,12 @@ set autoindent
 set mouse=a  " mouse support
 
 
-" set leader key to ,
-let g:mapleader=","
+" set leader key to Space
+let g:mapleader=" "
+
+" set kj and jk to Esc
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " >> Telescope bindings
 nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.builtin{}<CR>
@@ -105,6 +114,12 @@ nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
 nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
+
+" NERDtree keybindings
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 lua <<EOF
 require("lsp")
