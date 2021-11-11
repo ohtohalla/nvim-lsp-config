@@ -12,15 +12,17 @@ call plug#begin(stdpath('data') . 'vimplug')
 
     Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
     Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
-
+    Plug 'ryanoasis/vim-devicons'
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'nikvdp/neomux'
     Plug 'arcticicestudio/nord-vim'
-    
+    Plug 'rktjmp/lush.nvim'
+    Plug 'morhetz/gruvbox'   
 
     Plug 'tpope/vim-ragtag'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
+    Plug 'tpope/vim-commentary'
 
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-fugitive'
@@ -35,7 +37,7 @@ call plug#end()
 
 
 
-colorscheme nord
+colorscheme gruvbox
 
 " basic settings
 syntax on
@@ -135,4 +137,12 @@ require("lsp")
 require("treesitter")
 require("statusbar")
 require("completion")
+EOF
+
+lua <<EOF
+require('nvim-treesitter.configs').setup {
+  ensure_installed = "all",
+  hightlight = { enable = true },
+  indent = { enable = true }
+}
 EOF
