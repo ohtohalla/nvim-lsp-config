@@ -13,9 +13,6 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
     Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
     Plug 'ryanoasis/vim-devicons'
-    Plug 'NLKNguyen/papercolor-theme'
-    Plug 'nikvdp/neomux'
-    Plug 'arcticicestudio/nord-vim'
     Plug 'rktjmp/lush.nvim'
     Plug 'morhetz/gruvbox'   
 
@@ -33,6 +30,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
     Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+    Plug 'caenrique/nvim-toggle-terminal'
 call plug#end()
 
 
@@ -66,6 +64,8 @@ let g:mapleader=" "
 " set kj and jk to Esc
 inoremap jk <Esc>
 inoremap kj <Esc>
+" exit the terminal easier
+tnoremap <Esc> <C-\><C-n>
 
 " >> Telescope bindings
 nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.builtin{}<CR>
@@ -124,6 +124,10 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Toggle terminal keybindings
+nnoremap <silent> <C-z> :ToggleTerminal<Enter>
+tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
