@@ -31,6 +31,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
     Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
     Plug 'caenrique/nvim-toggle-terminal'
+    Plug 'lervag/vimtex'
 call plug#end()
 
 
@@ -94,6 +95,14 @@ nnoremap <Leader>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 " pick color scheme
 nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
 
+
+" VimTex settings
+
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 " >> setup nerdcomment key bindings
 let g:NERDCreateDefaultMappings = 0
