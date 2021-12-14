@@ -32,6 +32,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
     Plug 'caenrique/nvim-toggle-terminal'
     Plug 'lervag/vimtex'
+    Plug 'MDeiml/tree-sitter-markdown'
 call plug#end()
 
 
