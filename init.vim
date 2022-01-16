@@ -4,7 +4,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'neovim/nvim-lspconfig'
-    Plug 'kabouzeid/nvim-lspinstall'
+    Plug 'williamboman/nvim-lsp-installer'
     Plug 'glepnir/lspsaga.nvim'
     Plug 'hrsh7th/nvim-compe'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -104,6 +104,7 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+let g:vimtex_compiler_progname = 'nvr'
 
 " >> setup nerdcomment key bindings
 let g:NERDCreateDefaultMappings = 0
