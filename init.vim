@@ -32,6 +32,9 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-fugitive'
 
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'luochen1990/rainbow'
+
     Plug 'tomtom/tcomment_vim'
     
     Plug 'preservim/nerdtree'
@@ -44,6 +47,7 @@ call plug#begin(stdpath('data') . 'vimplug')
 call plug#end()
 
 set completeopt=menu,menuone,noselect
+let g:rainbow_active = 0
 
 colorscheme gruvbox
 
