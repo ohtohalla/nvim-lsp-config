@@ -11,8 +11,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
     Plug 'nvim-lualine/lualine.nvim'
- "   Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
-    Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
+    Plug 'kyazdani42/nvim-web-devicons'  " needed for lualine icons
     Plug 'ryanoasis/vim-devicons'
     Plug 'rktjmp/lush.nvim'
     Plug 'morhetz/gruvbox'   
@@ -151,7 +150,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 lua <<EOF
 require("lsp")
 require("treesitter")
-require("statusbar")
 require("completion")
 EOF
 
