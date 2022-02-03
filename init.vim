@@ -10,7 +10,8 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-    Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
+    Plug 'nvim-lualine/lualine.nvim'
+ "   Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
     Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
     Plug 'ryanoasis/vim-devicons'
     Plug 'rktjmp/lush.nvim'
@@ -159,5 +160,44 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = "all",
   hightlight = { enable = true },
   indent = { enable = true }
+}
+
+local custom_gruvbox = require'lualine.themes.gruvbox'
+
+-- Change the background of lualine_c section for normal mode
+custom_gruvbox.normal.c.bg = '#112233'
+
+require('lualine').setup {
+  options = { theme  = custom_gruvbox },
+  ...
+}
+
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
 }
 EOF
