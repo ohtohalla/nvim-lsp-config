@@ -12,12 +12,12 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
-    Plug 'SirVer/ultisnips'
-    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'  " needed for lualine icons
     Plug 'ryanoasis/vim-devicons'
