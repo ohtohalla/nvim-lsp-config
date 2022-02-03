@@ -6,7 +6,15 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/nvim-lsp-installer'
     Plug 'glepnir/lspsaga.nvim'
-    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'SirVer/ultisnips'
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
@@ -35,7 +43,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'MDeiml/tree-sitter-markdown'
 call plug#end()
 
-
+set completeopt=menu,menuone,noselect
 
 colorscheme gruvbox
 
